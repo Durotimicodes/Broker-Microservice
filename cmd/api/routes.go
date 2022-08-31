@@ -25,6 +25,9 @@ func (app *Config) routes() http.Handler {
 	//to check if this middleware is still alive in future
 	mux.Use(middleware.Heartbeat("/ping"))
 
+	//defining routes
+	mux.Post("/", app.Broker)
+
 	//tempory return
 	return mux
 }
