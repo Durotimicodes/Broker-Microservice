@@ -28,6 +28,9 @@ func (app *Config) routes() http.Handler {
 	//defining routes
 	mux.Post("/", app.Broker)
 
+	//route to handle all request
+	mux.Post("/handle", app.HandleSubmission )
+
 	//tempory return
 	return mux
 }
